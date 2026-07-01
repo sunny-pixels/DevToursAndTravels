@@ -24,12 +24,15 @@ export function DestinationCard({
     <Link href={`/destinations?country=${country.toLowerCase()}`}>
       <Card className="group overflow-hidden border-0 cursor-pointer h-full">
         <div className="relative h-72 w-full overflow-hidden rounded-xl bg-slate-200">
-          <img
+          <Image
             src={image}
             alt={name}
-            className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
+            fill
+            sizes="(max-width: 768px) 100vw, 33vw"
+            className="object-cover transition-transform duration-500 group-hover:scale-110"
+            loading="lazy"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-80" />
+          <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/30 to-transparent opacity-80" />
           
           <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-2 py-1 rounded-md flex items-center gap-1 text-sm font-semibold text-slate-900">
             <Star className="w-4 h-4 fill-accent text-accent" />

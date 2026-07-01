@@ -142,7 +142,7 @@ export default function PackageDetailsPage() {
                 <div className="grid md:grid-cols-2 gap-8">
                   <div>
                     <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
-                      <Shield className="w-5 h-5 text-secondary" /> What's Included
+                      <Shield className="w-5 h-5 text-secondary" /> Whats Included
                     </h3>
                     <ul className="space-y-3">
                       {pkg.included.map((item, i) => (
@@ -155,7 +155,7 @@ export default function PackageDetailsPage() {
                   </div>
                   <div>
                     <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
-                      <X className="w-5 h-5 text-destructive" /> What's Excluded
+                      <X className="w-5 h-5 text-destructive" /> Whats Excluded
                     </h3>
                     <ul className="space-y-3">
                       {pkg.excluded.map((item, i) => (
@@ -212,7 +212,7 @@ export default function PackageDetailsPage() {
               </div>
 
               <Button size="lg" className="w-full h-12 text-lg">Book Now</Button>
-              <p className="text-center text-sm text-slate-500 mt-4">You won't be charged yet</p>
+              <p className="text-center text-sm text-slate-500 mt-4">You wont be charged yet</p>
             </Card>
           </div>
         </div>

@@ -8,12 +8,21 @@ import { Search, MapPin, Filter } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const DESTINATIONS = [
-  { id: "1", name: "Bali", country: "Indonesia", image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4", rating: 4.9, toursCount: 45 },
-  { id: "2", name: "Swiss Alps", country: "Switzerland", image: "https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99", rating: 4.8, toursCount: 32 },
-  { id: "3", name: "Santorini", country: "Greece", image: "https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e", rating: 4.9, toursCount: 28 },
-  { id: "4", name: "Machu Picchu", country: "Peru", image: "https://images.unsplash.com/photo-1526392060635-9d6019884377", rating: 4.9, toursCount: 15 },
-  { id: "5", name: "Paris", country: "France", image: "https://images.unsplash.com/photo-1499856871958-5b9627545d1a", rating: 4.7, toursCount: 56 },
-  { id: "6", name: "Kyoto", country: "Japan", image: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e", rating: 4.8, toursCount: 34 },
+  { id: "1", name: "Rajasthan", country: "India", image: "https://images.unsplash.com/photo-1599661046289-e31897846e41", rating: 4.8, toursCount: 47 },
+  { id: "2", name: "Maldives", country: "Maldives", image: "https://images.unsplash.com/photo-1514282401047-d79a71a590e8", rating: 4.9, toursCount: 26 },
+  { id: "3", name: "Uttarakhand", country: "India", image: "https://images.unsplash.com/photo-1626621341169-7a1935ec6533", rating: 4.7, toursCount: 39 },
+  { id: "4", name: "Thailand", country: "Thailand", image: "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a", rating: 4.8, toursCount: 58 },
+  { id: "5", name: "Uttar Pradesh", country: "India", image: "https://images.unsplash.com/photo-1564507592333-c60657eea523", rating: 4.9, toursCount: 52 },
+  { id: "6", name: "Singapore", country: "Singapore", image: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd", rating: 4.8, toursCount: 44 },
+  { id: "7", name: "Lonavala-Matheran", country: "India", image: "https://images.unsplash.com/photo-1580289142438-5b8f00a89b3b", rating: 4.6, toursCount: 31 },
+  { id: "8", name: "Dubai", country: "UAE", image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c", rating: 4.9, toursCount: 61 },
+  { id: "9", name: "Goa", country: "India", image: "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2", rating: 4.7, toursCount: 62 },
+  { id: "10", name: "Lakshadweep", country: "India", image: "https://images.unsplash.com/photo-1586500036706-41963de24d8b", rating: 4.8, toursCount: 18 },
+  { id: "11", name: "Ladakh", country: "India", image: "https://images.unsplash.com/photo-1533130061792-64b345e4a833", rating: 4.9, toursCount: 22 },
+  { id: "12", name: "Vietnam", country: "Vietnam", image: "https://images.unsplash.com/photo-1528127269322-539801943592", rating: 4.7, toursCount: 35 },
+  { id: "13", name: "Darjeeling", country: "India", image: "https://images.unsplash.com/photo-1544634076-a90160ddf22e", rating: 4.6, toursCount: 25 },
+  { id: "14", name: "Russia", country: "Russia", image: "https://images.unsplash.com/photo-1513326738677-b964603b136d", rating: 4.7, toursCount: 19 },
+  { id: "15", name: "Kerala", country: "India", image: "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944", rating: 4.9, toursCount: 38 },
 ];
 
 export default function DestinationsPage() {
@@ -26,11 +35,11 @@ export default function DestinationsPage() {
   );
 
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen">
       {/* Hero Banner */}
-      <section className="relative h-[40vh] min-h-[300px] flex items-center justify-center">
+      <section className="relative h-[100vh] min-h-[300px] flex items-center justify-center">
         <div className="absolute inset-0 z-0">
-          <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800" alt="Destinations" className="w-full h-full object-cover" />
+          <img src="/destinationPage/hero-img.jpg" alt="Destinations" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-black/50" />
         </div>
         <div className="relative z-10 text-center text-white px-4">
@@ -47,7 +56,7 @@ export default function DestinationsPage() {
             transition={{ delay: 0.1 }}
             className="text-lg text-white/90 max-w-2xl mx-auto"
           >
-            Find your next adventure from our carefully curated list of the world's most beautiful locations.
+            Find your next adventure from our carefully curated list of the worlds most beautiful locations.
           </motion.p>
         </div>
       </section>
@@ -57,7 +66,7 @@ export default function DestinationsPage() {
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row gap-8">
             {/* Filters Sidebar */}
-            <div className="w-full md:w-64 space-y-8 shrink-0">
+            {/* <div className="w-full md:w-64 space-y-8 shrink-0">
               <div>
                 <h3 className="font-bold text-lg mb-4 flex items-center gap-2">
                   <Filter className="w-5 h-5 text-primary" /> Filters
@@ -92,7 +101,7 @@ export default function DestinationsPage() {
                   <Button className="w-full">Apply Filters</Button>
                 </div>
               </div>
-            </div>
+            </div> */}
 
             {/* Grid */}
             <div className="flex-1">
