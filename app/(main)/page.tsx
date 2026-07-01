@@ -40,6 +40,7 @@ const FEATURED_PACKAGES = [
     id: "p1",
     title: "Magical Maldives Honeymoon Escape",
     destination: "Maldives",
+    description: "A romantic island escape with overwater luxury, private dining, and turquoise lagoon adventures.",
     image: "/homePage/packages/maldives_pack.jpg",
     price: 1299,
     duration: 6,
@@ -50,6 +51,7 @@ const FEATURED_PACKAGES = [
     id: "p2",
     title: "Bali Beach Escape & Island Adventure",
     destination: "Indonesia",
+    description: "A sun-soaked mix of beach relaxation, island hopping, and energetic water activities.",
     image: "/homePage/packages/bali_pack.jpg",
     price: 899,
     duration: 6,
@@ -60,6 +62,7 @@ const FEATURED_PACKAGES = [
     id: "p3",
     title: "Pattaya Beach & Nightlife Experience",
     destination: "Thailand",
+    description: "An exciting coastal getaway blending iconic beach experiences with vibrant nightlife and culture.",
     image: "/homePage/packages/pattaya_pack.jpg",
     price: 1599,
     duration: 6,
@@ -349,7 +352,7 @@ export default function Home() {
             </h2>
 
             <p className="text-white/80 mb-8 max-w-xl mx-auto">
-              Enter your email and we'll keep you updated with the latest travel
+              Enter your email and well keep you updated with the latest travel
               deals, destination guides, and exclusive holiday packages.
             </p>
 
