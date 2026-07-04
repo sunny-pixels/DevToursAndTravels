@@ -61,9 +61,9 @@ export function PackageCard({
           className="object-cover transition-transform duration-500 group-hover:scale-105"
           loading="lazy"
         />
-        <div className="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">
+        {/* <div className="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">
           Featured
-        </div>
+        </div> */}
       </div>
 
       <CardContent className="p-6 flex flex-col flex-1">

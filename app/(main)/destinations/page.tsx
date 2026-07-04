@@ -8,21 +8,21 @@ import { Search, MapPin, Filter } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const DESTINATIONS = [
-  { id: "1", name: "Rajasthan", country: "India", image: "https://images.unsplash.com/photo-1599661046289-e31897846e41", rating: 4.8, toursCount: 47 },
-  { id: "2", name: "Maldives", country: "Maldives", image: "https://images.unsplash.com/photo-1514282401047-d79a71a590e8", rating: 4.9, toursCount: 26 },
-  { id: "3", name: "Uttarakhand", country: "India", image: "https://images.unsplash.com/photo-1626621341169-7a1935ec6533", rating: 4.7, toursCount: 39 },
-  { id: "4", name: "Thailand", country: "Thailand", image: "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a", rating: 4.8, toursCount: 58 },
-  { id: "5", name: "Uttar Pradesh", country: "India", image: "https://images.unsplash.com/photo-1564507592333-c60657eea523", rating: 4.9, toursCount: 52 },
-  { id: "6", name: "Singapore", country: "Singapore", image: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd", rating: 4.8, toursCount: 44 },
-  { id: "7", name: "Lonavala-Matheran", country: "India", image: "https://images.unsplash.com/photo-1580289142438-5b8f00a89b3b", rating: 4.6, toursCount: 31 },
-  { id: "8", name: "Dubai", country: "UAE", image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c", rating: 4.9, toursCount: 61 },
-  { id: "9", name: "Goa", country: "India", image: "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2", rating: 4.7, toursCount: 62 },
-  { id: "10", name: "Lakshadweep", country: "India", image: "https://images.unsplash.com/photo-1586500036706-41963de24d8b", rating: 4.8, toursCount: 18 },
-  { id: "11", name: "Ladakh", country: "India", image: "https://images.unsplash.com/photo-1533130061792-64b345e4a833", rating: 4.9, toursCount: 22 },
-  { id: "12", name: "Vietnam", country: "Vietnam", image: "https://images.unsplash.com/photo-1528127269322-539801943592", rating: 4.7, toursCount: 35 },
-  { id: "13", name: "Darjeeling", country: "India", image: "https://images.unsplash.com/photo-1544634076-a90160ddf22e", rating: 4.6, toursCount: 25 },
-  { id: "14", name: "Russia", country: "Russia", image: "https://images.unsplash.com/photo-1513326738677-b964603b136d", rating: 4.7, toursCount: 19 },
-  { id: "15", name: "Kerala", country: "India", image: "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944", rating: 4.9, toursCount: 38 },
+  { id: "1", name: "Rajasthan", country: "India", image: "/destinationPage/Rajasthan.jpg", rating: 4.8, toursCount: 47 },
+  { id: "2", name: "Maldives", country: "Maldives", image: "/destinationPage/maldives.jpg", rating: 4.9, toursCount: 26 },
+  { id: "3", name: "Uttarakhand", country: "India", image: "/destinationPage/uttarakhand.jpg", rating: 4.7, toursCount: 39 },
+  { id: "4", name: "Thailand", country: "Thailand", image: "/destinationPage/thailand.jpg ", rating: 4.8, toursCount: 58 },
+  { id: "5", name: "Uttar Pradesh", country: "India", image: "/destinationPage/uttarpradesh.jpg", rating: 4.9, toursCount: 52 },
+  { id: "6", name: "Singapore", country: "Singapore", image: "/destinationPage/singapore.jpg", rating: 4.8, toursCount: 44 },
+  { id: "7", name: "Lonavala-Matheran", country: "India", image: "/destinationPage/matheran.jpg", rating: 4.6, toursCount: 31 },
+  { id: "8", name: "Dubai", country: "UAE", image: "/destinationPage/dubai.jpg", rating: 4.9, toursCount: 61 },
+  { id: "9", name: "Goa", country: "India", image: "/destinationPage/goa.jpg", rating: 4.7, toursCount: 62 },
+  { id: "10", name: "Lakshadweep", country: "India", image: "/destinationPage/lakshadweep.jpg", rating: 4.8, toursCount: 18 },
+  { id: "11", name: "Ladakh", country: "India", image: "/destinationPage/ladakh.jpg", rating: 4.9, toursCount: 22 },
+  { id: "12", name: "Vietnam", country: "Vietnam", image: "/destinationPage/vietnam.jpg", rating: 4.7, toursCount: 35 },
+  { id: "13", name: "Darjeeling", country: "India", image: "/destinationPage/darjeeling.jpg", rating: 4.6, toursCount: 25 },
+  { id: "14", name: "Russia", country: "Russia", image: "/destinationPage/russia.jpg", rating: 4.7, toursCount: 19 },
+  { id: "15", name: "Kerala", country: "India", image: "/destinationPage/kerala.jpg", rating: 4.9, toursCount: 38 },
 ];
 
 export default function DestinationsPage() {

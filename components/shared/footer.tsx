@@ -87,10 +87,10 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/cab"
+                  href="/services"
                   className="hover:text-primary transition-colors"
                 >
-                  Cab Services
+                  Services
                 </Link>
               </li>
               <li>
