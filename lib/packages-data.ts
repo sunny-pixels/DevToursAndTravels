@@ -11,16 +11,12 @@ export interface Package {
   description: string;
   image: string;
   images: string[];
-  price: number;
   duration: number;
   rating: number;
   reviews: number;
   bestTime: string;
   groupSize: string;
   highlights: string[];
-  included: string[];
-  excluded: string[];
-  itinerary: PackageItineraryDay[];
 }
 
 export const PACKAGES: Package[] = [
@@ -28,90 +24,29 @@ export const PACKAGES: Package[] = [
     id: "p1",
     title: "Royal Rajasthan Desert & Palace Trail",
     destination: "Rajasthan",
-    description:
-      "Experience the timeless grandeur of Rajasthan as you journey through majestic forts, opulent palaces, vibrant bazaars, tranquil lakes, and the golden sands of the Thar Desert. Discover the royal heritage of Jaipur, the blue streets of Jodhpur, the enchanting dunes of Jaisalmer, and the romantic lakes of Udaipur on an unforgettable cultural adventure.",
+description: "Embark on an unforgettable journey through the royal heart of India, where magnificent forts, grand palaces, vibrant bazaars, serene lakes, and endless golden deserts narrate stories of a glorious past. Discover the regal charm of Jaipur's architectural marvels, wander through the iconic blue lanes of Jodhpur, experience the magical sand dunes and desert culture of Jaisalmer, and soak in the romantic beauty of Udaipur's shimmering lakes and palaces. Continue your adventure to the peaceful hill station of Mount Abu, offering lush landscapes, scenic viewpoints, and ancient temples. From thrilling camel safaris and mesmerizing folk performances to authentic Rajasthani cuisine, colorful handicrafts, and timeless traditions, every moment of this journey reflects Rajasthan's rich heritage, warm hospitality, and unmatched cultural splendor, creating memories that will last a lifetime.",
     image: "/packagesPage/rajasthan/img1.jpg",
     images: [
       "/packagesPage/rajasthan/img1.jpg",
       "/packagesPage/rajasthan/img2.jpg",
       "/packagesPage/rajasthan/img3.jpg",
     ],
-    price: 899,
     duration: 7,
     rating: 4.8,
     reviews: 94,
     bestTime: "October – March",
     groupSize: "2 – 15 People",
 
-    highlights: [
-      "Amber Fort & Hawa Mahal in Jaipur",
-      "Mehrangarh Fort & Blue City of Jodhpur",
-      "Jaisalmer Fort & Sam Sand Dunes",
-      "Camel Safari with Cultural Folk Performances",
-      "Lake Pichola Boat Ride in Udaipur",
-      "City Palace & Saheliyon Ki Bari",
-      "Traditional Rajasthani Cuisine",
-      "Shopping in Local Handicraft & Textile Markets",
-    ],
-
-    included: [
-      "6 Nights Premium Hotel Accommodation",
-      "Daily Breakfast",
-      "Air-Conditioned Private Transportation",
-      "Professional Local Tour Guide",
-      "Camel Safari at Sam Sand Dunes",
-      "Evening Cultural Program",
-      "Sightseeing as per Itinerary",
-      "All Toll Taxes & Parking Charges",
-    ],
-
-    excluded: [
-      "Airfare / Train Tickets",
-      "Lunch & Dinner",
-      "Personal Expenses",
-      "Travel Insurance",
-      "Entry Tickets to Monuments",
-      "Camera & Video Charges",
-      "Anything Not Mentioned Under 'Included'",
-    ],
-
-    itinerary: [
-      {
-        day: 1,
-        title: "Arrival in Jaipur – The Pink City",
-        desc: "Arrive in Jaipur, check into your hotel, and spend the evening exploring colorful local markets famous for handicrafts, jewelry, and traditional Rajasthani cuisine.",
-      },
-      {
-        day: 2,
-        title: "Explore Jaipur's Royal Heritage",
-        desc: "Visit Amber Fort, Hawa Mahal, City Palace, Jantar Mantar, and Jal Mahal while discovering the rich history of Rajasthan's capital.",
-      },
-      {
-        day: 3,
-        title: "Journey to Jodhpur – The Blue City",
-        desc: "Drive through scenic landscapes to Jodhpur. Visit the magnificent Mehrangarh Fort, Jaswant Thada, and stroll through the iconic blue lanes of the old city.",
-      },
-      {
-        day: 4,
-        title: "Jodhpur to Jaisalmer",
-        desc: "Travel into the heart of the Thar Desert. Explore the Golden Fort of Jaisalmer before witnessing a breathtaking sunset over the Sam Sand Dunes.",
-      },
-      {
-        day: 5,
-        title: "Camel Safari & Desert Camp Experience",
-        desc: "Enjoy an unforgettable camel safari across the golden dunes, followed by a traditional Rajasthani folk dance, live music, cultural performances, and dinner under the stars.",
-      },
-      {
-        day: 6,
-        title: "Udaipur – The City of Lakes",
-        desc: "Travel to Udaipur and spend the evening cruising on the serene waters of Lake Pichola while admiring the magnificent Lake Palace and surrounding Aravalli Hills.",
-      },
-      {
-        day: 7,
-        title: "Explore Udaipur & Departure",
-        desc: "Visit the grand City Palace, Saheliyon Ki Bari, Jagdish Temple, and Fateh Sagar Lake before concluding your memorable Rajasthan journey.",
-      },
-    ],
+highlights: [
+  "Jaipur – Amber Fort, Hawa Mahal & City Palace",
+  "Jodhpur – Mehrangarh Fort & Blue City Walk",
+  "Jaisalmer – Golden Fort & Desert Camel Safari",
+  "Udaipur – Lake Pichola Boat Ride & City Palace",
+  "Mount Abu – Nakki Lake & Dilwara Temples",
+  "Traditional Rajasthani Folk Dance & Music",
+  "Authentic Local Cuisine & Shopping",
+  "Comfortable Guided Sightseeing Throughout the Tour",
+],
   },
   {
     id: "p2",

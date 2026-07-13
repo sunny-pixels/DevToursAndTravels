@@ -1,19 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import {
-  Star,
-  Clock,
-  MapPin,
-  Check,
-  Plane,
-  TrainFront,
-  Car,
-  Bus,
-} from "lucide-react";
+import { Star, Clock, MapPin, Check, ArrowRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-
-type TransportMode = "flight" | "train" | "cab" | "bus";
 
 interface PackageCardProps {
   id: string;
@@ -21,22 +10,11 @@ interface PackageCardProps {
   destination: string;
   description: string;
   image: string;
-  price: number;
+  // price: number;
   duration: number;
   rating: number;
   highlights: string[];
-  transportIncluded?: TransportMode[];
 }
-
-const transportConfig: Record<
-  TransportMode,
-  { icon: typeof Plane; label: string }
-> = {
-  flight: { icon: Plane, label: "Flight" },
-  train: { icon: TrainFront, label: "Train" },
-  cab: { icon: Car, label: "Cab Transfers" },
-  bus: { icon: Bus, label: "Bus" },
-};
 
 export function PackageCard({
   id,
@@ -44,14 +22,15 @@ export function PackageCard({
   destination,
   description,
   image,
-  price,
   duration,
   rating,
   highlights,
-  transportIncluded = ["flight", "cab"],
 }: PackageCardProps) {
   return (
-    <Card className="group overflow-hidden flex flex-col h-full border-slate-200 hover:shadow-xl transition-all duration-300">
+    <Card className="group overflow-hidden flex flex-col h-full border-slate-200/70 shadow-sm shadow-slate-200/50
+                      hover:shadow-xl hover:shadow-blue-100/50 hover:-translate-y-1 transition-all duration-300 p-0 gap-0">
+
+      {/* Image with floating badges */}
       <div className="relative h-64 w-full overflow-hidden">
         <Image
           src={image}
@@ -61,68 +40,61 @@ export function PackageCard({
           className="object-cover transition-transform duration-500 group-hover:scale-105"
           loading="lazy"
         />
-        {/* <div className="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">
-          Featured
-        </div> */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/0 to-black/0" />
+
+        {/* Rating pill */}
+        <div className="absolute top-4 right-4 flex items-center gap-1 bg-white/90 backdrop-blur-sm
+                        text-slate-900 px-2.5 py-1 rounded-full text-xs font-bold shadow-sm">
+          <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+          {rating}
+        </div>
+
+        {/* Duration pill */}
+        <div className="absolute bottom-4 left-4 flex items-center gap-1.5 bg-white/90 backdrop-blur-sm
+                        text-slate-900 px-2.5 py-1 rounded-full text-xs font-semibold shadow-sm">
+          <Clock className="w-3.5 h-3.5 text-blue-600" />
+          {duration} Days
+        </div>
       </div>
 
       <CardContent className="p-6 flex flex-col flex-1">
-        <div className="flex justify-between items-start mb-2">
-          <div className="flex items-center gap-1 text-sm text-slate-500 mb-2">
-            <MapPin className="w-4 h-4" />
-            <span>{destination}</span>
-          </div>
-          <div className="flex items-center gap-1 bg-accent/10 text-accent px-2 py-1 rounded text-sm font-semibold">
-            <Star className="w-4 h-4 fill-accent" />
-            {rating}
-          </div>
+        <div className="flex items-center gap-1 text-xs font-semibold uppercase tracking-wide text-blue-600 mb-2">
+          <MapPin className="w-3.5 h-3.5" />
+          <span>{destination}</span>
         </div>
 
-        <h3 className="text-xl font-serif font-bold mb-4 line-clamp-2 text-slate-900 group-hover:text-primary transition-colors">
+        <h3 className="text-xl font-serif font-bold mb-2 line-clamp-2 text-slate-900 group-hover:text-blue-600 transition-colors">
           <Link href={`/packages/${id}`}>{title}</Link>
         </h3>
 
         <p className="text-sm text-slate-500 mb-5 line-clamp-1">
           {description}
         </p>
-        <div className="flex items-center gap-4 text-sm text-slate-600 mb-3">
-          <div className="flex items-center gap-1">
-            <Clock className="w-4 h-4 text-primary" />
-            <span>{duration} Days</span>
-          </div>
-        </div>
 
-        <div className="space-y-2 mb-6 flex-1">
+        <div className="space-y-2.5 mb-6 flex-1">
           {highlights.slice(0, 3).map((highlight, idx) => (
             <div
               key={idx}
-              className="flex items-start gap-2 text-sm text-slate-600"
+              className="flex items-start gap-2.5 text-sm text-slate-600"
             >
-              <Check className="w-4 h-4 text-secondary shrink-0 mt-0.5" />
+              <span className="flex items-center justify-center w-4.5 h-4.5 rounded-full bg-blue-50 shrink-0 mt-0.5">
+                <Check className="w-3 h-3 text-blue-600" />
+              </span>
               <span className="line-clamp-1">{highlight}</span>
             </div>
           ))}
         </div>
 
-        <div className="flex items-center justify-between gap-3 pt-6 border-t border-slate-100 mt-auto">
-          <div className="flex items-center gap-2">
-            {transportIncluded.map((mode) => {
-              const { icon: Icon, label } = transportConfig[mode];
-              return (
-                <div
-                  key={mode}
-                  className="flex items-center gap-1.5 bg-slate-50 text-slate-600 px-2.5 py-1.5 rounded-md text-xs font-medium"
-                >
-                  <Icon className="w-3.5 h-3.5 text-primary" />
-                  <span>{label}</span>
-                </div>
-              );
-            })}
-          </div>
-          <Link href={`/packages/${id}`}>
-            <Button>Book Now</Button>
-          </Link>
-        </div>
+        <Link href={`/packages/${id}`} className="mt-auto">
+          <Button
+            className="w-full h-11 rounded-xl gap-2 bg-gradient-to-r from-blue-600 to-blue-500
+                       shadow-md shadow-blue-500/25 hover:shadow-lg hover:shadow-blue-500/35
+                       transition-all group/btn"
+          >
+            Book Now
+            <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-0.5" />
+          </Button>
+        </Link>
       </CardContent>
     </Card>
   );
