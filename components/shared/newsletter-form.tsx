@@ -47,7 +47,8 @@ export function NewsletterForm() {
           size="lg"
           variant="secondary"
           disabled={status === "loading"}
-          className="h-12 px-8"
+          className="h-12 px-8 bg-gradient-to-r from-blue-600 to-blue-500
+                            hover:shadow-xl hover:shadow-blue-500/50 transition-all hover:scale-[1.02]"
         >
           {status === "loading" ? "Sending..." : "Get Updates"}
         </Button>

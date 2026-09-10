@@ -35,16 +35,34 @@ export default function ContactPage() {
         <div className="absolute inset-0 bg-linear-to-t from-slate-900 via-slate-900/40 to-transparent" />
 
         <div className="relative z-10 flex flex-col justify-between p-12 w-full">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group w-max">
-            <div className="relative w-12 h-12">
-              <Image src="/logo-1.png" alt="Dev Holidays" fill sizes="48px" className="object-contain" />
-            </div>
-            <div className="flex flex-col leading-none">
-              <span className="font-bold text-xl text-white">DevHolidays</span>
-              <span className="text-[10px] uppercase tracking-widest text-white/60">Tours &amp; Travel</span>
-            </div>
-          </Link>
+
+            {/* LOGO */}
+            <Link href="/" className="flex items-center gap-2 group shrink-0 text-white">
+              {/* <div className="relative w-14 h-14 transition-transform group-hover:scale-105">
+            <Image
+              src="/logo-1.png"
+              alt="Dev Holidays Logo"
+              fill
+              sizes="56px"
+              className="object-contain"
+              priority
+            />
+          </div> */}
+              <div className="flex flex-col leading-none">
+                <span
+                  className="text-2xl font-bold tracking-tight transition-colors duration-300"
+                  // isScrolled ? "text-slate-900 dark:text-white" : "text-white"
+                >
+                  DevHolidays
+                </span>
+                <span
+                  className="text-[10px] uppercase tracking-[0.3em] transition-colors duration-300"
+                  // isScrolled ? "text-slate-500 dark:text-slate-400" : "text-white/70"
+                >
+                  Tours &amp; Travel
+                </span>
+              </div>
+            </Link>
 
           {/* Tagline */}
           <div>

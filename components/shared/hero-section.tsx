@@ -72,22 +72,6 @@ export function HeroSection() {
         ))}
       </div>
 
-      {/* ── Current destination tag ── */}
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={`tag-${current}`}
-          initial={{ opacity: 0, x: -16 }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -16 }}
-          transition={{ duration: 0.4 }}
-          className="absolute bottom-8 left-6 md:left-12 z-20 hidden md:flex items-center gap-2
-                     bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-4 py-2"
-        >
-          <MapPin className="w-4 h-4 text-primary" />
-          <span className="text-white text-sm font-medium">{SLIDES[current].destination}</span>
-        </motion.div>
-      </AnimatePresence>
-
       {/* ── Main content ── */}
       <div className="relative z-20 flex-1 flex flex-col items-center justify-center
                       container mx-auto px-4 text-center pt-42 md:pt-36 pb-10">
@@ -137,7 +121,8 @@ export function HeroSection() {
           <Link
             href="/packages"
             className="bg-primary hover:bg-primary/90 text-white font-semibold px-8 py-3 rounded-xl
-                       shadow-lg shadow-primary/30 transition-all hover:scale-105 active:scale-95"
+                       bg-gradient-to-r from-blue-600 to-blue-500
+                           shadow-lg shadow-blue-500/40 hover:shadow-xl hover:shadow-blue-500/50 transition-all hover:scale-[1.02]"
           >
             Explore Packages
           </Link>
@@ -149,6 +134,22 @@ export function HeroSection() {
             Talk to an Expert
           </Link>
         </motion.div>
+
+        {/* ── Current destination tag ── */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={`tag-${current}`}
+            initial={{ opacity: 0, x: -16 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -16 }}
+            transition={{ duration: 0.4 }}
+            className="hidden md:flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20
+                       rounded-full px-4 py-2 mb-4"
+          >
+            <MapPin className="w-4 h-4 text-primary" />
+            <span className="text-white text-sm font-medium">{SLIDES[current].destination}</span>
+          </motion.div>
+        </AnimatePresence>
 
         {/* ── Info cards — 2-col on mobile, single row on desktop ── */}
         <motion.div

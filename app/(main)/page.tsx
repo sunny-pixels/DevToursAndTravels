@@ -178,7 +178,7 @@ export default function Home() {
             </div>
             <Link
               href="/packages"
-              className="mt-4 md:mt-0 text-primary font-semibold hover:underline"
+              className="mt-4 md:mt-0 font-semibold hover:underline text-blue-600"
             >
               View All Packages
             </Link>

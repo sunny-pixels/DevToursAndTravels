@@ -2,10 +2,13 @@
 
 import { useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, Check, MapPin } from "lucide-react";
 import { DestinationCard } from "@/components/shared/destination-card";
 import { Button } from "@/components/ui/button";
+
+const MotionImage = motion.create(Image);
 
 // ─── Data ───────────────────────────────────────────────────────────────────
 // Enriched with the fields the new card design needs (description, best time,
@@ -116,12 +119,15 @@ export default function DestinationsPage() {
     <div className="min-h-screen bg-white">
 
       {/* ── 1. Hero ── */}
-      <div ref={heroRef} className="relative h-[85vh] min-h-[600px] max-h-[840px] overflow-hidden">
-        <motion.img
+      <div ref={heroRef} className="relative h-[100vh] min-h-[600px] max-h-[840px] overflow-hidden">
+        <MotionImage
           src="/destinationPage/hero-img.jpg"
           alt="Destinations"
+          fill
+          priority
+          sizes="100vw"
           style={{ scale: heroScale, opacity: heroOpacity }}
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-black/30" />
 
@@ -211,10 +217,13 @@ export default function DestinationsPage() {
             <FadeUp delay={0.15}>
               <div className="relative">
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-slate-300/50 aspect-[4/5] md:aspect-square">
-                  <img
+                  <Image
                     src={DESTINATIONS[14].image}
                     alt="Kerala backwaters"
-                    className="w-full h-full object-cover"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    loading="lazy"
+                    className="object-cover"
                   />
                 </div>
 
@@ -365,10 +374,13 @@ export default function DestinationsPage() {
 
             <FadeUp delay={0.15}>
               <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-slate-300/50 aspect-[4/3]">
-                <img
+                <Image
                   src="/destinationPage/ladakh.jpg"
                   alt="Mountain landscape"
-                  className="w-full h-full object-cover"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  loading="lazy"
+                  className="object-cover"
                 />
               </div>
             </FadeUp>
@@ -378,14 +390,17 @@ export default function DestinationsPage() {
 
       {/* ── 7. Final CTA ── */}
       <section className="relative py-28 md:py-36 overflow-hidden">
-        <motion.img
+        <MotionImage
           src="/destinationPage/hero-img.jpg"
           alt=""
+          fill
+          sizes="100vw"
+          loading="lazy"
           initial={{ scale: 1 }}
           whileInView={{ scale: 1.08 }}
           viewport={{ once: true }}
           transition={{ duration: 8, ease: "easeOut" }}
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black/80" />
 

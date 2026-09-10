@@ -103,7 +103,7 @@ export default function PackagesPage() {
     <div className="min-h-screen bg-white">
 
       {/* ── 1. Hero ── */}
-      <div ref={heroRef} className="relative h-[85vh] min-h-[600px] max-h-[840px] overflow-hidden">
+      <div ref={heroRef} className="relative h-[100vh] min-h-[600px] max-h-[840px] overflow-hidden">
         <motion.img
           src="/packagesPage/hero-img.jpg"
           alt="Travel Packages"
@@ -181,7 +181,7 @@ export default function PackagesPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {WHY_CHOOSE_US.map((item, i) => (
               <FadeUp key={item.title} delay={i * 0.06}>
-                <div className="h-full bg-white/70 backdrop-blur-sm border border-slate-200/70 rounded-3xl p-8
+                <div className="h-full bg-white/70 backdrop-blur-sm border border-slate-300/70 rounded-3xl p-8
                                 shadow-sm shadow-slate-200/50 hover:shadow-xl hover:shadow-blue-100/60
                                 hover:-translate-y-1.5 transition-all duration-300">
                   <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600
